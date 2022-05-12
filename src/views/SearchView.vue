@@ -1,8 +1,8 @@
 <template>
     <el-scrollbar height="1024">
         <div class="background">
-            <el-input v-model="input" placeholder="Please input" />
             <top-vue></top-vue>
+            <el-input v-model="store.searchedText" placeholder="Please input" />
             <cards-vue></cards-vue>
         </div>
     </el-scrollbar>

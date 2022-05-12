@@ -13,9 +13,10 @@ export const myStore = defineStore({
   }),
   getters:{
     checkTextLenght:(txt)=>txt.lenght>50,
-    NeededCards:(state)=>(state.onMainPage)? state.allCards.filter((item)=>state.date[0]+state.date[1]*30+(state.date[2]-2022)*365-(item.time.split('.')[0]+item.time.split('.')[1]*30+(item.time.split('.')[2]-2022)*365)):state.allCards.filter(()=>state.allCards.author.includes(state.searchedText)||state.allCards.promo.includes(state.searchedText)||state.allCards.time.includes(state.searchedText))
+    NeededCards:(state)=>(state.onMainPage)?state.allCards :state.allCards.filter(()=>state.allCards.author.includes(state.searchedText)||state.allCards.promo.includes(state.searchedText)||state.allCards.time.includes(state.searchedText))
   },
   actions:{
     
   }
 })
+//state.allCards.filter((item)=>state.date[0]+state.date[1]*30+(state.date[2]-2022)*365-(item.time.split('.')[0]+item.time.split('.')[1]*30+(item.time.split('.')[2]-2022)*365))
